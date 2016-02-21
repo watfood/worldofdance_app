@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
 
-  resources :users, only: [:new, :create]
+  resources :users, only: [:new, :create, :show, :index, :destroy]
 
   get "/videos" => "videos#index"
   get "/videos/new" => "videos#new"
