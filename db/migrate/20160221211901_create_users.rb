@@ -6,6 +6,7 @@ class CreateUsers < ActiveRecord::Migration
       t.string :email
       t.string :dncr
       t.string :password_digest
+      t.string :profile_img_url
       t.string :dncrew
       t.date :date_of_birth
       t.string :location

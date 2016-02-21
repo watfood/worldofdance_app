@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  resources :users, only: [:new, :create]
+
   get "/videos" => "videos#index"
   get "/videos/new" => "videos#new"
   post "/videos" => "videos#create"
@@ -8,7 +10,8 @@ Rails.application.routes.draw do
   patch "/videos/:id" => "videos#update"
   delete "/videos/:id" => "videos#destroy"
 
-
+  resources :sessions, only: [:new, :create, :destroy]
+  get '/login', to: 'sessions#new'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

@@ -38,6 +38,7 @@ http://www.worldofdance.com"
 
 Video.create(
   embed_url:        "XfEs8LpJbUY",
+  thumbnail_url:    "imagefile",
   title:            "The Drop featuring Dytto | Episode 57",
   user:            "Dytto",
   dncrew:                   "",
@@ -48,6 +49,7 @@ Video.create(
 
 Video.create(
   embed_url:        "yKZPegNGGbY",
+  thumbnail_url:    "imagefile",
   title:            "8 Flavahz | Mos Wanted Crew | Quick Crew | Super Cr3w | #DNCR | Live from #WODLA | #WODWeekly 17 ",
   user:            "worldofdance",
   dncrew:           "World of Dance",
@@ -61,6 +63,7 @@ With Megan Batoon @meganbatoon
 
 Video.create(
   embed_url:           "w-0t9K-g45Y",
+  thumbnail_url:        "imagefile",
   title:                   "Les Twins | World of Dance | FRONTROW | #WODSD 2013 ",
   user:                 "Les Twins",
   dncrew:                 "Les Twins",
@@ -72,6 +75,7 @@ Discover dance music on our new channel Music by WOD! https://goo.gl/WTd4B0"
 
 Video.create(
   embed_url:           "mw7At5nsDH4",
+  thumbnail_url:        "imagefile",
   title:                   "Quest Crew | FRONTROW | World of Dance #WODLA '14 ",
   user:                 "Quest Crew",
   dncrew:                 "Quest Crew",
@@ -80,6 +84,7 @@ Video.create(
 )
 Video.create(
   embed_url:           "mw7At5nsDH4",
+  thumbnail_url:        "imagefile",
   title:                   "Quest Crew | FRONTROW | World of Dance #WODLA '14 ",
   user:                 "Quest Crew",
   dncrew:                 "Quest Crew",
@@ -94,6 +99,7 @@ User.create(
   dncr: "theDuane",
   password: "worldofdance",
   password_confirmation: "worldofdance",
+  profile_img_url:    "imagefile",
   dncrew: "worldofdance",
   date_of_birth: Date.parse("24-08-21977"),
   location: "Los Angeles, Ca",
@@ -107,6 +113,7 @@ User.create(
   dncr: "Megan Batoon",
   password: "megan",
   password_confirmation: "megan",
+  profile_img_url:    "imagefile",
   dncrew: "Mis Taken",
   date_of_birth: Date.parse("24-08-21977"),
   location: "North Hollywood, Ca",
@@ -120,6 +127,7 @@ User.create(
   dncr: "Chachi Gonzales",
   password: "chachi",
   password_confirmation: "chachi",
+  profile_img_url:    "imagefile",
   dncrew: "IaMmE",
   date_of_birth: Date.parse("24-08-21977"),
   location: "Hollywood, Ca",
@@ -133,6 +141,7 @@ User.create(
   dncr: "Dytto",
   password: "dytto",
   password_confirmation: "dytto",
+  profile_img_url:    "imagefile",
   dncrew: "none",
   date_of_birth: Date.parse("24-08-21977"),
   location: "Hollywood, Ca",
