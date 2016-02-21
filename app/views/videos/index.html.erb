@@ -1,0 +1,8 @@
+<main>
+<% @videos.each do |video| %>
+  <article>
+   <h4><%= link_to video.title, video_path(video) %></h4>
+   <%=raw video.embed %>
+  </article>
+  <% end %>
+</main>

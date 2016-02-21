@@ -1,9 +1,20 @@
 Rails.application.routes.draw do
+
+  get "/videos" => "videos#index"
+  get "/videos/new" => "videos#new"
+  post "/videos" => "videos#create"
+  get "/videos/:id" => "videos#show", as: :video
+  get "/videos/:id/edit" => "videos#edit", as: :edit_video
+  patch "/videos/:id" => "videos#update"
+  delete "/videos/:id" => "videos#destroy"
+
+
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
-  # root 'welcome#index'
+root 'videos#index'
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

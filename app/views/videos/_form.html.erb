@@ -1,0 +1,34 @@
+<%= form_for @video do |f| %>
+    <%= f.label :title %>
+    <%= f.text_field :title %>
+  <br>
+    <%= f.label :user %>
+    <%= f.text_field :user %>
+  <br>
+    <%= f.label :dncrew %>
+    <%= f.text_field :dncrew %>
+  <br>
+    <%= f.label :series %>
+    <%= f.text_field  :series %>
+  <br>
+    <%= f.label :embed_url, "YouTube Id" %>
+    <%= f.text_field :embed_url %>
+  <br>
+    <%= f.label :description %>
+    <%= f.text_field :description %>
+  <br>
+
+
+  <%= f.submit "Submit Changes" %>
+
+
+<% end %>
+
+<%= link_to "Delete Video!", video_path, method: :delete, data: { confirm: "Are you sure you want to delete this Video?"} %>
+
+<ul>
+
+<% @video.errors.full_messages.each do |message| %>
+  <li><%= message %></li>
+<% end %>
+</ul>

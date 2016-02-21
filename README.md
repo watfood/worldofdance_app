@@ -15,8 +15,21 @@ From influencer marketing and branded content to video pre-roll and event sponso
 
 The **World of Dance APP** will bring the best dance videos from the WOD media properties under one video app platform to directly provide dance fan enthusiasts a home to find and keep up with the latest dance videos, but also give them the opportunity to connect with their favorite dance stars and share their own dance videos.
 
+###Phase 1 Netflix Video Style Interface(MVP)
+* Create Video Model
+* Create User Model
+* Develop Clean Modern Interface
+* Develop Organizational Structure to make browsing thousands of Tiles Easy
+* Search Function
+
+###Phase 2 Youtube User Generated Content Functionality(IceBox UGC)
+* Update User Model with ability to add and admin own content
+* Tie existing Model with UGC model
+
+
+
 Follow the planning and development of this app at my [Trello]
 (https://trello.com/b/s8Q58WSt/world-of-dance)
 
-Duane Than
+Duane Than  
 [linkedin.com/in/duanethan](linkedin.com/in/duanethan)
