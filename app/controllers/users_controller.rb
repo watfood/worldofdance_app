@@ -1,5 +1,8 @@
 class UsersController < ApplicationController
 
+  before_action :set_user, only: [:show, :edit, :update, :destroy]
+  before_action :authorize
+
   def index
     @user = User.all
   end
@@ -19,10 +22,31 @@ class UsersController < ApplicationController
      end
   end
 
+  def show
+    @user = User.find(params[:id])
+  end
+
+  def edit
+    @user = User.find(params[:id])
+  end
+
+  def update
+    @user = User.find(params[:id])
+
+    if @user.update_attributes(params.require(:user).permit(:first_name, :last_name, :email, :dncr, :profile_img_url, :dncrew, :date_of_birth, :location, :about))
+      redirect_to user_path
+    else
+      render :edit
+    end
+  end
+
   private
     # Implement Strong Params
     def user_params
       params.require(:user).permit(:first_name, :last_name, :dncr, :email, :password, :password_confirmation)
+    end
+    def set_user
+      @user = User.find(params[:id])
     end
 
 end

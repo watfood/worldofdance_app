@@ -101,7 +101,7 @@ User.create(
   password_confirmation: "worldofdance",
   profile_img_url:    "imagefile",
   dncrew: "worldofdance",
-  date_of_birth: Date.parse("24-08-21977"),
+  date_of_birth: Date.parse("24-08-1977"),
   location: "Los Angeles, Ca",
   about: "Super Awesome Admin"
   )
@@ -115,7 +115,7 @@ User.create(
   password_confirmation: "megan",
   profile_img_url:    "imagefile",
   dncrew: "Mis Taken",
-  date_of_birth: Date.parse("24-08-21977"),
+  date_of_birth: Date.parse("24-08-1977"),
   location: "North Hollywood, Ca",
   about: "Megan Batoon"
   )
@@ -129,7 +129,7 @@ User.create(
   password_confirmation: "chachi",
   profile_img_url:    "imagefile",
   dncrew: "IaMmE",
-  date_of_birth: Date.parse("24-08-21977"),
+  date_of_birth: Date.parse("24-08-1977"),
   location: "Hollywood, Ca",
   about: "Chachi Gonzaeles"
 )
@@ -143,7 +143,7 @@ User.create(
   password_confirmation: "dytto",
   profile_img_url:    "imagefile",
   dncrew: "none",
-  date_of_birth: Date.parse("24-08-21977"),
+  date_of_birth: Date.parse("24-08-1977"),
   location: "Hollywood, Ca",
   about: "Dytto"
 )

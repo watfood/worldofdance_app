@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+<h1>DNCR User List</h1>
+<table>
+<thead>
+    <tr>
+      <p>First Name:  <%= @user.first_name %></p>
+      <p>Last Name:  <%= @user.last_name %></p>
+      <p>DNCR:  <%= @user.dncr %>  </p>
+      <p>Email:  <%= @user.email %></p>
+      <p>DNCREW:  <%= @user.dncrew %></p>
+      <p>Date of Birth:  <%= @user.date_of_birth %></p>
+      <p>Location: <%= @user.location %> </p>
+      <p>About: <%= @user.about %></p>
+
+<%= link_to "DNCR User List", users_path %> | <%= link_to "Edit User", edit_user_path %>
+    </tr>
+
+</table>
+
