@@ -1,7 +1,7 @@
 class UsersController < ApplicationController
 
   before_action :set_user, only: [:show, :edit, :update, :destroy]
-  before_action :authorize
+  before_action :authorize, except: [:new, :create]
 
   def index
     @user = User.all
@@ -43,7 +43,7 @@ class UsersController < ApplicationController
   private
     # Implement Strong Params
     def user_params
-      params.require(:user).permit(:first_name, :last_name, :dncr, :email, :password, :password_confirmation)
+      params.require(:user).permit(:first_name, :last_name, :dncr, :email, :password, :password_confirmation, :profile_img_url, :dncrew, :date_of_birth, :location, :about)
     end
     def set_user
       @user = User.find(params[:id])
