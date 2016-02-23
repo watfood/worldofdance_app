@@ -31,7 +31,8 @@
       </div>
       <div class="modal-body">
           <span id="video-title"> Video Title </span>
-          <span id="video-embedurl"> Video Embed </span>
+         <iframe id="video-embed" width="854" height="480" src="" allowfullscreen>video embed</iframe>
+
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
@@ -44,7 +45,7 @@
 <script>
 function openVideoModal(title, url) {
   $('#video-title').html(title);
-  $('#video-embedurl').html("https://youtube.com/embed/" + url);
+  $('#video-embed').attr("src", 'https://youtube.com/embed/' + url +'?rel=0&autoplay=1');
   $('#myModal').modal({backdrop: true});
 }
 
