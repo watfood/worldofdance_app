@@ -1,8 +1,51 @@
 <main>
 <% @videos.each do |video| %>
+
+
   <article>
-   <h4><%= link_to video.title, video_path(video) %></h4>
+   <!-- <button data-toggle="modal" data-target="#myModal">open</button> -->
+   <button onclick="openVideoModal('<%=video.title%>', '<%=video.embed_url%>')">open</button>
+   <% if is_admin %>
+    <p>I'm an admin bitch!</p>
+   <% end %>
+   <h4>
+    <% if current_user %>
+      <%= link_to video.title, video_path(video) %>
+    <% else %>
+      <p><%= video.title %></p>
+    <% end %>
+
+   </h4>
    <%=raw video.embed %>
+
   </article>
-  <% end %>
+<% end %>
 </main>
+<!-- Modal -->
+<div class="modal fade" id="myModal" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">Modal title</h4>
+      </div>
+      <div class="modal-body">
+          <span id="video-title"> Video Title </span>
+          <span id="video-embedurl"> Video Embed </span>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+function openVideoModal(title, url) {
+  $('#video-title').html(title);
+  $('#video-embedurl').html("https://youtube.com/embed/" + url);
+  $('#myModal').modal({backdrop: true});
+}
+
+</script>
