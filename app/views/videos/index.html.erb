@@ -4,7 +4,7 @@
 
   <article>
    <!-- <button data-toggle="modal" data-target="#myModal">open</button> -->
-   <button onclick="openVideoModal('<%=video.title%>', '<%=video.embed_url%>')">open</button>
+   <button onclick="openVideoModal('<%=video.title%>', '<%=video.embed_url%>')">PLAY</button>
    <% if is_admin %>
     <p>I'm an admin bitch!</p>
    <% end %>
@@ -35,7 +35,7 @@
 
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        <button onclick=closeVideo() type="button" class="btn btn-default" data-dismiss="modal">Close</button>
         <button type="button" class="btn btn-primary">Save changes</button>
       </div>
     </div>
@@ -43,10 +43,15 @@
 </div>
 
 <script>
+console.log(openVideoModal)
 function openVideoModal(title, url) {
   $('#video-title').html(title);
   $('#video-embed').attr("src", 'https://youtube.com/embed/' + url +'?rel=0&autoplay=1');
   $('#myModal').modal({backdrop: true});
+}
+function closeVideo(title, url){
+  $('#video-title').html(title);
+  $('#video-embed').attr("src", '');
 }
 
 </script>
