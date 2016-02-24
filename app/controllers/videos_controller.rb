@@ -36,7 +36,7 @@ class VideosController < ApplicationController
   def update
     @video = Video.find(params[:id])
 
-    if @video.update_attributes(params.require(:video).permit(:embed_url, :title, :user, :dncrew, :series, :description))
+    if @video.update_attributes(params.require(:video).permit(:embed_url, :title, :user, :thumbnail_url, :dncrew, :series, :description))
       redirect_to videos_path
     else
       render :edit

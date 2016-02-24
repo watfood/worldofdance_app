@@ -25,10 +25,14 @@ nav {
 
 .modal-body {
   width: 100%;
-  height: 92%;
+  height: 97%;
   padding: 0;
 }
 
 .modal {
-  height: 99%;
+  height: 100%;
+}
+
+.modal-header {
+  color: white;
 }
