@@ -3,6 +3,7 @@
 <table>
 <thead>
     <tr>
+      <p><%= image_tag @user.profile_img_url.url(:medium) %>
       <p>First Name:  <%= @user.first_name %></p>
       <p>Last Name:  <%= @user.last_name %></p>
       <p>DNCR:  <%= @user.dncr %>  </p>

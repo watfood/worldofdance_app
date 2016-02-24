@@ -3,6 +3,8 @@ source 'https://rubygems.org'
 gem 'bootstrap-sass', '~> 3.3.6'
 gem 'bootstrap_form'
 gem "paperclip", "~> 4.3"
+gem 'dotenv-rails', :groups => [:development, :test]
+
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.5.1'
