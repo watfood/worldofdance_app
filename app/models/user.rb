@@ -5,5 +5,10 @@ class User < ActiveRecord::Base
  validates :dncr, presence: true, uniqueness: true
  validates :first_name, presence: true
  validates :last_name, presence: true
+
+ has_attached_file :profile_img_url, styles: { medium: "300x300>", thumb: "100x100>" }, default_url: "/images/:style/missing.png"
+ validates_attachment_content_type :profile_img_url, content_type: /\Aimage\/.*\Z/
+
+
 end
 
