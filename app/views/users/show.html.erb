@@ -1,19 +1,24 @@
-<p id="notice"><%= notice %></p>
+
 <h1><%= @user.dncr %></h1>
-<table>
-<thead>
-    <tr>
-      <p><%= image_tag @user.profile_img_url.url(:medium) %></p>
-      <h2><%= @user.first_name %> <%= @user.last_name %></h2>
-      <p>DNCR:  <%= @user.dncr %>  </p>
-      <p>Email: <%= @user.email %></p>
-      <p>DNCREW:  <%= @user.dncrew %></p>
-      <p>Date of Birth:  <%= @user.date_of_birth %></p>
-      <p>Location: <%= @user.location %> </p>
-      <p>About: <%= @user.about %></p>
+  <div class="showContainer">
+  <p><%= image_tag @user.profile_img_url.url(:medium) %></p>
 
-<%= link_to "DNCR User List", users_path %> | <%= link_to "Edit User", edit_user_path %>
-    </tr>
+    <div id="showInfo">
+    <table>
+    <thead>
+        <tr>
+          <h2><%= @user.first_name %> <%= @user.last_name %></h2>
+          <p>DNCR:  <%= @user.dncr %>  </p>
+          <p>Email: <%= @user.email %></p>
+          <p>DNCREW:  <%= @user.dncrew %></p>
+          <p>Date of Birth:  <%= @user.date_of_birth %></p>
+          <p>Location: <%= @user.location %> </p>
+          <p>About: <%= @user.about %></p>
 
-</table>
+    <%= link_to "DNCR User List", users_path %> | <%= link_to "Edit User", edit_user_path %>
+        </tr>
+
+    </table>
+    </div>
+  </div>
 

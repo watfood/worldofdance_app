@@ -1,12 +1,22 @@
 <main>
-  <div id="carouselSlide" class="videoRow" data-ride="carousel">
-   <!-- <button data-toggle="modal" data-target="#myModal">open</button> -->
-   <videoButton onClick="openVideoModal('<%=@video.title%>', '<%=@video.embed_url%>')"><%=  image_tag ("http://img.youtube.com/vi/#{@video.embed_url}/maxresdefault.jpg"), {height: 450, width: 800}  %></videoButton>
-   <% if is_admin %>
-    <p>I'm an admin bitch!</p>
-   <% end %>
+  <div class="showContainer">
+    <div id="showThumbLarge">
+      <videoButton onClick="openVideoModal('<%=@video.title%>', '<%=@video.embed_url%>')"><%=  image_tag ("http://img.youtube.com/vi/#{@video.embed_url}/maxresdefault.jpg"), {height: 450, width: 800}  %></videoButton>
+        <% if is_admin %>
+          <p>I'm an admin bitch!</p>
+        <% end %>
+    </div>
+    <div id="showInfo">
+      <h3><%= @video.title %></h3>
+            <br>
+        <p>DNCR: <%= @video.user %>  </p>
+        <p><%= @video.dncrew %></p>
+        <p>Series: <%= @video.series %></p>
+        <p><%= @video.description %></p>
+    </div>
   </div>
 </main>
+
 <!-- Modal -->
 <div class="modal fade" id="myModal" role="dialog" aria-labelledby="video-title">
       <div class="modal-body">
@@ -14,6 +24,7 @@
          <iframe id="video-embed" width="100%" height="100%" src="" allowfullscreen>video embed</iframe>
       </div>
 </div>
+
 
 <script>
 console.log(openVideoModal)
