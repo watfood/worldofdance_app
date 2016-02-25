@@ -4,10 +4,18 @@
     <p><%= link_to image_tag("https://i.imgur.com/SgE62Sc.png", size: "150x83"), videos_path  %></p>
   </div>
     <div class="navbar-header navbar-right">
-
       <h3>D  N  C  R</h3>
-
-       <% if current_user %>
+      <% if is_admin %>
+        Welcome, <%= current_user.dncr %>
+        &nbsp;&nbsp;|&nbsp;&nbsp;
+        <%= link_to 'DNCR MNGR', users_path %>
+        &nbsp;&nbsp;|&nbsp;&nbsp;
+        <%= link_to 'Add DNCR', new_user_path %>
+        &nbsp;&nbsp;|&nbsp;&nbsp;
+        <%= link_to 'Add VIDEO', videos_new_path %>
+        &nbsp;&nbsp;|&nbsp;&nbsp;
+        <%= link_to 'Logout', session_path('dummy'), method: :delete %>
+       <% elsif current_user %>
         Welcome, <%= current_user.dncr %>
         &nbsp;&nbsp;|&nbsp;&nbsp;
         <%= link_to 'Logout', session_path('dummy'), method: :delete %>

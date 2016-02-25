@@ -2,9 +2,6 @@
   <div class="showContainer">
     <div id="showThumbLarge">
       <videoButton onClick="openVideoModal('<%=@video.title%>', '<%=@video.embed_url%>')"><%=  image_tag ("http://img.youtube.com/vi/#{@video.embed_url}/maxresdefault.jpg"), {height: 450, width: 800}  %></videoButton>
-        <% if is_admin %>
-          <p>I'm an admin bitch!</p>
-        <% end %>
     </div>
     <div id="showInfo">
       <h3><%= @video.title %></h3>
@@ -13,6 +10,9 @@
         <p><%= @video.dncrew %></p>
         <p>Series: <%= @video.series %></p>
         <p><%= @video.description %></p>
+        <% if is_admin %>
+         <%= link_to 'Edit Video', edit_video_path %>
+        <% end %>
     </div>
   </div>
 </main>
