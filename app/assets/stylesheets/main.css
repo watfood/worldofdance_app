@@ -2,9 +2,10 @@
 body {
   font-size: 14px;
   background-color: black;
-  border: 1px solid white;
-  padding-top: 70px;
+  border: none;
+  padding-top: 100px;
   margin: 0 auto;
+  color: white
 }
 
 h1,
@@ -20,14 +21,6 @@ h3 {
 article {
   border: 1px solid red;
   padding: 1rem;
-}
-
-.nav {
-    text-align: ;
-    color: white;
-    font-size: 20px;
-    position: fixed;
-    display: inline-block;
 }
 
 
@@ -48,16 +41,12 @@ article {
 }
 
 videoButton {
-
 }
-
 
 videoButton:hover {
     cursor: pointer;
     transform: translate3d($moveRight, 0, 0)
 }
-
-
 
 .videoRow {
   display: inline-table;
@@ -71,10 +60,31 @@ videoButton:hover {
 .navbar {
   background: rgba(29,29,29,0.95);
   display: inline;
+  border: none;
+  height: 85px
 }
 
 .navbar-header{
-  display: inline;
+  border: none;
+  margin-right: 50px;
+}
+
+.brand {
+    margin-left: 50px;
+    border: none;
+}
+
+
+.forms {
+  width: 500px;
+  margin: 0 auto;
+  padding-bottom: 50px;
+
+}
+
+.userIndex {
+  margin: 0 auto;
+  padding-bottom: 50px;
 }
 
 .carousel-inner .active.left { left: -25%; }

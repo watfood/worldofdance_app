@@ -1,29 +1,29 @@
-<p id="notice"><%= notice %></p>
-<h1>DNCR User List</h1>
-<table>
-<thead>
-    <tr>
-      <th>User ID</th>
-      <th>First Name</th>
-      <th>Last Name</th>
-      <th>DNCR</th>
-      <th>Email</th>
-      <th>DNCREW</th>
 
-      <th colspan="5"></th>
-    </tr>
-  </thead>
-  <tbody>
-    <% @user.each do |user| %>
+<h1>DNCR User List</h1>
+  <table class="userIndex">
+
+  <thead>
       <tr>
-        <td>id: <%= link_to user.id, user_path(user) %></td>
-        <td><%= user.first_name %></td>
-        <td><%= user.last_name %></td>
-        <td><%= user.dncr %></td>
-        <td><%= user.email %></td>
-        <td><%= user.dncrew %></td>
-        <td><%= link_to "Details", user_path(user) %></td>
-    <% end %>
-  </tbody>
-</table>
+        <th>User ID &nbsp;&nbsp;&nbsp;&nbsp;</th>
+        <th>First Name &nbsp;&nbsp;&nbsp;&nbsp;</th>
+        <th>Last Name &nbsp;&nbsp;&nbsp;&nbsp;    </th>
+        <th>DNCR &nbsp;&nbsp;&nbsp;&nbsp;</th>
+        <th>Email &nbsp;&nbsp;&nbsp;&nbsp;</th>
+        <th>DNCREW &nbsp;&nbsp;&nbsp;&nbsp;</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @user.each do |user| %>
+        <tr>
+          <td>id: <%= link_to user.id, user_path(user) %></td>
+          <td><%= user.first_name %></td>
+          <td><%= user.last_name %></td>
+          <td><%= user.dncr %></td>
+          <td><%= user.email %></td>
+          <td><%= user.dncrew %></td>
+          <td><%= link_to "Details", user_path(user) %></td>
+      <% end %>
+    </tbody>
+  </table>
+
 
