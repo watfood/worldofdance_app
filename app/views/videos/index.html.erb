@@ -1,80 +1,82 @@
 <main>
-
-
-<% @videos.each do |video| %>
-
-  <div id="carouselSlide" class="videoRow" data-ride="carousel">
-   <!-- <button data-toggle="modal" data-target="#myModal">open</button> -->
-   <videoButton onClick="openVideoModal('<%=video.title%>', '<%=video.embed_url%>')"><%=  image_tag ("http://img.youtube.com/vi/#{video.embed_url}/maxresdefault.jpg"), {height: 180, width: 320}  %></videoButton>
-   <% if is_admin %>
-    <p>I'm an admin bitch!</p>
-   <% end %>
-   <h6>
-    <% if current_user %>
-      <%= link_to video.title, video_path(video) %>
-    <% else %>
-      <p><%= video.title %></p>
-    <% end %>
-
-   </h6>
-
-  </div>
-<% end %>
+  <% Video.series.each do |series| %>
+    <% rand_id = SecureRandom.hex %>
+    <div class="carousel-wrapper">
+      <div class="series-header">
+        <h5 class="series"><%= series %> <i class="glyphicon glyphicon-chevron-right"></i></h5>
+      </div>
+      <div class="video-row-wrapper">
+        <div id="series-<%= rand_id %>" class="video-row-inner">
+          <% Video.where(series: series).each do |video| %>
+            <div class="video tile">
+              <videoButton onClick="openVideoModal('<%=video.title%>', '<%=video.embed_url%>')">
+                <%= image_tag("http://img.youtube.com/vi/#{video.embed_url}/maxresdefault.jpg", {height: 180, width: 320, class: "video-thumb"}) %>
+              </videoButton>
+              <div class="video-title">
+                <% if is_admin %>
+                  <p>I'm an admin bitch!</p>
+                <% end %>
+                <h6>
+                <% if current_user %>
+                  <span><%= link_to truncate(video.title, length: 45), video_path(video) %></span>
+                <% else %>
+                  <span><%= truncate(video.title, length: 45) %></span>
+                <% end %>
+                </h6>
+              </div>
+            </div>
+          <% end %>
+        </div>
+        <div class="scrollband scroll-left" data-series="series-<%= rand_id %>">
+          <i class="glyphicon glyphicon-chevron-left"></i>
+        </div>
+        <div class="scrollband scroll-right" data-series="series-<%= rand_id %>">
+          <i class="glyphicon glyphicon-chevron-right"></i>
+        </div>
+      </div>
+    </div>
+  <% end %>
 </main>
+
 <!-- Modal -->
 <div class="modal fade" id="myModal" role="dialog" aria-labelledby="video-title">
-  <!-- <div class="modal-dialog modal-lg" role="document"> -->
-    <!-- <div class="modal-content"> -->
-      <!-- <div class="modal-header">
-        <button onclick=closeVideo() type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        <h4 class="modal-title" id="video-title">Modal title</h4>
-      </div> -->
-      <div class="modal-body">
-         <button onClick=closeVideo() type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-         <iframe id="video-embed" width="100%" height="100%" src="" allowfullscreen>video embed</iframe>
-      </div>
-      <!-- <div class="modal-footer">
-        <button onclick=closeVideo() type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        <h4 class="modal-title" id="video-title">Modal title</h4>
-      </div> -->
-    <!-- </div> -->
-<!--   </div> -->
+  <div class="modal-body">
+    <button onClick=closeVideo() type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+    <iframe id="video-embed" width="100%" height="100%" src="" allowfullscreen>video embed</iframe>
+  </div>
 </div>
 
 <script>
-console.log(openVideoModal)
-function openVideoModal(title, url) {
-  $('#video-title').html(title);
-  $('#video-embed').attr("src", 'https://youtube.com/embed/' + url +'?rel=0&autoplay=1');
-  $('#myModal').modal({backdrop: true});
-}
-function closeVideo(title, url){
-  $('#video-title').html(title);
-  $('#video-embed').attr("src", '');
- }
-// <----carousel---->
-
-
-$('#myCarousel').carousel({
-  interval: 4000
-})
-
-$('.carousel .item').each(function(){
-  var next = $(this).next();
-  if (!next.length) {
-    next = $(this).siblings(':first');
+  console.log(openVideoModal)
+  function openVideoModal(title, url) {
+    $('#video-title').html(title);
+    $('#video-embed').attr("src", 'https://youtube.com/embed/' + url +'?rel=0&autoplay=1');
+    $('#myModal').modal({backdrop: true});
   }
-  next.children(':first-child').clone().appendTo($(this));
-
-  for (var i=0;i<2;i++) {
-    next=next.next();
-    if (!next.length) {
-      next = $(this).siblings(':first');
-    }
-
-    next.children(':first-child').clone().appendTo($(this));
+  function closeVideo(title, url){
+    $('#video-title').html(title);
+    $('#video-embed').attr("src", '');
   }
-});
 
+  $(function() {
+    $(".scroll-left").on("click", function(evt) {
+      var seriesId = $(evt.currentTarget).attr("data-series");
+      var $videoInnerRow = $("#" + seriesId);
+      var currentScrollPosition = $videoInnerRow.scrollLeft();
 
+      $videoInnerRow.stop().animate({
+        scrollLeft: currentScrollPosition - 400
+      }, 500);
+    });
+
+    $(".scroll-right").on("click", function(evt) {
+      var seriesId = $(evt.currentTarget).attr("data-series");
+      var $videoInnerRow = $("#" + seriesId);
+      var currentScrollPosition = $videoInnerRow.scrollLeft();
+
+      $videoInnerRow.stop().animate({
+        scrollLeft: currentScrollPosition + 400
+      }, 500);
+    });
+  });
 </script>

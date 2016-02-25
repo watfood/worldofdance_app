@@ -12,4 +12,8 @@ class Video < ActiveRecord::Base
     '" frameborder="0" allowfullscreen></iframe>'
   end
 
+  def self.series
+    self.all.pluck(:series).uniq.sort
+  end
+
 end
