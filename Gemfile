@@ -5,6 +5,7 @@ gem 'bootstrap_form'
 gem "paperclip", "~> 4.3"
 gem 'dotenv-rails', :groups => [:development, :test]
 gem 'aws-sdk', '< 2.0'
+gem 'seed_dump'
 
 ruby '2.2.3'
 
