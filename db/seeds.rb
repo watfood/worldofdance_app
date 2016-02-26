@@ -4,7 +4,7 @@ Video.delete_all
 
 users = User.create([
 
-  {first_name: "Duane", last_name: "Than", email: "duane@worldofdance.com", dncr: "Duane", password_digest: "$2a$10$kC1vSiJOS93hma64IKITo.HPG32tx1M8/.jlxHdcXQyFio0hMnvlm", profile_img_url: "imagefile", dncrew: "worldofdance", date_of_birth: "1977-08-24", location: "Los Angeles, Ca", about: "Super Awesome Admin", admin: true, profile_img_url_file_name: "trekfbphoto.jpg", profile_img_url_content_type: "image/jpeg", profile_img_url_file_size: 38656, profile_img_url_updated_at: "2016-02-24 19:39:25"},
+  {first_name: "Duane", last_name: "Than", email: "duane@worldofdance.com", dncr: "Duane", password_digest: "$2a$10$kC1vSiJOS93hma64IKITo.HPG32tx1M8/.jlxHdcXQyFio0hMnvlm", profile_img_url: "", dncrew: "worldofdance", date_of_birth: "1977-08-24", location: "Los Angeles, Ca", about: "Super Awesome Admin", admin: true, profile_img_url_file_name: "trekfbphoto.jpg", profile_img_url_content_type: "image/jpeg", profile_img_url_file_size: 38656, profile_img_url_updated_at: "2016-02-24 19:39:25"},
 
 ])
 
