@@ -12,25 +12,25 @@
     </div>
   <% end %>
   <div class="field">
-    <%= f.text_field :first_name %>
+    <%= f.text_field :first_name, label: "First Name*" %>
   </div>
   <div class="field">
-    <%= f.text_field :last_name %>
+    <%= f.text_field :last_name, label: "Last Name*"  %>
   </div>
   <div class="field">
-    <%= f.text_field :email %>
+    <%= f.text_field :email, label: "Email*"  %>
   </div>
   <div class="field">
-    <%= f.text_field :dncr %>
+    <%= f.text_field :dncr, label: "DNCR User Name*" %>
   </div>
   <div class="field">
     <%= f.file_field :profile_img_url, label: "Upload Profile Picture" %>
   </div>
   <div class="field">
-    <%= f.text_field :dncrew %>
+    <%= f.text_field :dncrew, label: "DNCrew (Dance Crew)" %>
   </div>
   <div class="field">
-    <%= f.date_select :date_of_birth, order: [:month, :day, :year] %>
+    <%= f.date_select :date_of_birth, order: [:month, :day, :year],start_year: 2015,  end_year: 1950 %>
   </div>
   <div class="field">
     <%= f.text_field :location %>
@@ -39,9 +39,9 @@
     <%= f.text_field :about %>
   </div>
   <div class="field">
-    <%= f.password_field :password %>
+    <%= f.password_field :password, label: "Password*" %>
   </div>
-    <%= f.password_field :password_confirmation %>
+    <%= f.password_field :password_confirmation, label: "Password Confirmation*" %>
 
   <div class="actions"><%= f.submit %></div>
 
