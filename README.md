@@ -143,7 +143,7 @@ and finally assuming you have already set up your **Heroku** account
 
 
 #Planned Features Wish List aka the ICE BOX
-![Icy](http://www.funny-potato.com/images/apple/icebox.jpg)
+![Icy](https://i.imgur.com/2LyTEwM.jpg)
 
 [ ]	 **Search Feature**  
 [ ] **User Generated Content and Upload**  
