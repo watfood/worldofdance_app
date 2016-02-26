@@ -1,29 +1,40 @@
+<% if is_admin %>
+  <h1>DNCR User List</h1>
+    <table class="userIndex">
 
-<h1>DNCR User List</h1>
-  <table class="userIndex">
-
-  <thead>
-      <tr>
-        <th>User ID &nbsp;&nbsp;&nbsp;&nbsp;</th>
-        <th>First Name &nbsp;&nbsp;&nbsp;&nbsp;</th>
-        <th>Last Name &nbsp;&nbsp;&nbsp;&nbsp;    </th>
-        <th>DNCR &nbsp;&nbsp;&nbsp;&nbsp;</th>
-        <th>Email &nbsp;&nbsp;&nbsp;&nbsp;</th>
-        <th>DNCREW &nbsp;&nbsp;&nbsp;&nbsp;</th>
-      </tr>
-    </thead>
-    <tbody>
-      <% @user.each do |user| %>
+    <thead>
         <tr>
-          <td>id: <%= link_to user.id, user_path(user) %></td>
-          <td><%= user.first_name %></td>
-          <td><%= user.last_name %></td>
-          <td><%= user.dncr %></td>
-          <td><%= user.email %></td>
-          <td><%= user.dncrew %></td>
-          <td><%= link_to "Details", user_path(user) %></td>
-      <% end %>
-    </tbody>
-  </table>
-
-
+          <th>User ID &nbsp;&nbsp;&nbsp;&nbsp;</th>
+          <th>First Name &nbsp;&nbsp;&nbsp;&nbsp;</th>
+          <th>Last Name &nbsp;&nbsp;&nbsp;&nbsp;    </th>
+          <th>DNCR &nbsp;&nbsp;&nbsp;&nbsp;</th>
+          <th>Email &nbsp;&nbsp;&nbsp;&nbsp;</th>
+          <th>DNCREW &nbsp;&nbsp;&nbsp;&nbsp;</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @user.each do |user| %>
+          <tr>
+            <td>id: <%= link_to user.id, user_path(user) %></td>
+            <td><%= user.first_name %></td>
+            <td><%= user.last_name %></td>
+            <td><%= user.dncr %></td>
+            <td><%= user.email %></td>
+            <td><%= user.dncrew %></td>
+            <td><%= link_to "Details", user_path(user) %></td>
+        <% end %>
+      </tbody>
+    </table>
+ <% elsif current_user %>
+  <h1><%= link_to image_tag("https://i.imgur.com/6QuXWSf.png", size: "105x34"), users_path  %></h1><br>
+    <div class="dncrIndex">
+    <div id="picturecontainer">
+        <% @user.each do |user| %>
+          <div id="imageanduser">
+          <p><%= link_to image_tag(user.profile_img_url.url(:medium)),user_path(user) %></p>
+          <p><%= user.dncr %></p>
+          </div>
+        <% end %>
+      </div>
+    </div>
+<% end %>

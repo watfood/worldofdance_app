@@ -4,7 +4,7 @@
     <p><%= link_to image_tag("https://i.imgur.com/SgE62Sc.png", size: "150x83"), videos_path  %></p>
   </div>
     <div class="navbar-header navbar-right">
-      <h3>D  N  C  R</h3>
+      <h3><%= link_to image_tag("https://i.imgur.com/6QuXWSf.png", size: "105x34"), users_path  %></h3>
       <% if is_admin %>
         Welcome, <%= current_user.dncr %>
         &nbsp;&nbsp;|&nbsp;&nbsp;
@@ -24,6 +24,6 @@
         &nbsp;&nbsp;|&nbsp;&nbsp;
         <%= link_to 'Sign Up', new_user_path %>
       <% end %>
-        </div>
+    </div>
 </nav>
 

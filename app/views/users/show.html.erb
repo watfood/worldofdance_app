@@ -14,8 +14,11 @@
           <p>Date of Birth:  <%= @user.date_of_birth %></p>
           <p>Location: <%= @user.location %> </p>
           <p>About: <%= @user.about %></p>
-
+    <% if is_admin %>
     <%= link_to "DNCR User List", users_path %> | <%= link_to "Edit User", edit_user_path %>
+    <% elsif current_user %>
+    <%= link_to "DNCR", users_path %> | <%= link_to "Videos", videos_path %>
+    <% end %>
         </tr>
 
     </table>
